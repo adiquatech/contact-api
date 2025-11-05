@@ -1,0 +1,12 @@
+### GET ALL CONTACTS
+GET http://localhost:3000/api/contact
+
+### GET ONE CONTACT (Wasiu)
+GET http://localhost:3000/api/contact/690746b15c34d91c212dd777
+
+
+### GET ALL CONTACTS (Render)
+GET https://contact-api-2il0.onrender.com/api/contact
+
+### GET ONE CONTACT (Wasiu)
+GET https://contact-api-2il0.onrender.com/api/contact/690746b15c34d91c212dd777
