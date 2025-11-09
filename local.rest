@@ -49,24 +49,24 @@ POST https://contact-api-2il0.onrender.com/contact
 Content-Type: application/json
 
 {
-  "firstName": "Aisha",
+  "firstName": "Ade",
   "lastName": "Adisa",
-  "email": "aisha@example.com",
-  "favoriteColor": "purple",
-  "birthday": "2000-01-01"
+  "email": "adisawasiZ@gmail.com",
+  "favoriteColor": "Emerald",
+  "birthday": "1990-05-18"
 }
 ### PUT - Update Contact
-PUT https://contact-api-2il0.onrender.com/contact/
+PUT https://contact-api-2il0.onrender.com/contact/6910b4e88a896374d010ec27
 Content-Type: application/json
 
 {
-  "firstName": "Aisha",
-  "lastName": "Updated",
-  "email": "aisha.updated@example.com",
-  "favoriteColor": "pink",
-  "birthday": "2000-01-01"
+  "firstName": "Wasiu",
+  "lastName": "Adisa",
+  "email": "adisawasiZ@gmail.com",
+  "favoriteColor": "Emerald",
+  "birthday": "1990-05-18"
 }
 ### DELETE - Delete Contact
-DELETE https://contact-api-2il0.onrender.com/contact/
+DELETE https://contact-api-2il0.onrender.com/contact/690746b15c34d91c212dd777
 
 
