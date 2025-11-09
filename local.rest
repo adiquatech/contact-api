@@ -42,7 +42,7 @@ DELETE http://localhost:3000/contact/6910820ea553df46afb56847
 GET https://contact-api-2il0.onrender.com/contact
 
 ### GET ONE CONTACT (Wasiu)
-GET https://contact-api-2il0.onrender.com/contact/690746b15c34d91c212dd777
+GET https://contact-api-2il0.onrender.com/contact/
 
 ### POST - Create Contact
 POST https://contact-api-2il0.onrender.com/contact
@@ -56,7 +56,7 @@ Content-Type: application/json
   "birthday": "2000-01-01"
 }
 ### PUT - Update Contact
-PUT https://contact-api-2il0.onrender.com/contact/69108871ac77a47580a6ef3a
+PUT https://contact-api-2il0.onrender.com/contact/
 Content-Type: application/json
 
 {
@@ -67,6 +67,6 @@ Content-Type: application/json
   "birthday": "2000-01-01"
 }
 ### DELETE - Delete Contact
-DELETE https://contact-api-2il0.onrender.com/contact/69108871ac77a47580a6ef3a
+DELETE https://contact-api-2il0.onrender.com/contact/
 
 

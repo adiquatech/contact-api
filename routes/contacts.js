@@ -4,11 +4,6 @@ const router = express.Router();
 const { getDb } = require('../db/connect');
 const { ObjectId } = require('mongodb');
 
-// TEMP TEST ROUTE — REMOVE LATER
-router.post('/', (req, res) => {
-  res.status(201).json({ message: 'TEST POST WORKS', body: req.body });
-});
-
 // GET all contacts
 router.get('/', async (req, res) => {
   try {
