@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 // routes/contacts.js
 const express = require('express');
 const router = express.Router();
@@ -36,10 +35,7 @@ router.get('/:id', async (req, res) => {
 
 // POST - Create a new contact
 router.post('/', async (req, res) => {
-  // STANDARD: Extract required fields
   const { firstName, lastName, email, favoriteColor, birthday } = req.body;
-
-  // STANDARD: Validate all fields (required by assignment)
   if (!firstName || !lastName || !email || !favoriteColor || !birthday) {
     return res.status(400).json({ error: 'All fields are required' });
   }
@@ -47,11 +43,7 @@ router.post('/', async (req, res) => {
   try {
     const db = getDb();
     const newContact = { firstName, lastName, email, favoriteColor, birthday };
-
-    // STANDARD: Insert into MongoDB
     const result = await db.collection('contactsdb').insertOne(newContact);
-
-    // STANDARD: Return 201 + new _id
     res.status(201).json({ _id: result.insertedId, ...newContact });
   } catch (err) {
     res.status(500).json({ error: 'Failed to create contact' });
@@ -62,7 +54,6 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   const { firstName, lastName, email, favoriteColor, birthday } = req.body;
 
-  // STANDARD: All fields required on update
   if (!firstName || !lastName || !email || !favoriteColor || !birthday) {
     return res.status(400).json({ error: 'All fields are required' });
   }
@@ -70,7 +61,6 @@ router.put('/:id', async (req, res) => {
   try {
     const db = getDb();
 
-    // STANDARD: Use $set to update only provided fields
     const result = await db
       .collection('contactsdb')
       .updateOne(
@@ -78,12 +68,10 @@ router.put('/:id', async (req, res) => {
         { $set: { firstName, lastName, email, favoriteColor, birthday } }
       );
 
-    // STANDARD: Check if contact was found
     if (result.matchedCount === 0) {
       return res.status(404).json({ error: 'Contact not found' });
     }
 
-    // STANDARD: 200 OK (or 204)
     res.json({ message: 'Contact updated successfully' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to update contact' });
@@ -95,17 +83,14 @@ router.delete('/:id', async (req, res) => {
   try {
     const db = getDb();
 
-    // STANDARD: Delete by _id
     const result = await db.collection('contactsdb').deleteOne({
       _id: new ObjectId(req.params.id),
     });
 
-    // STANDARD: Check if deleted
     if (result.deletedCount === 0) {
       return res.status(404).json({ error: 'Contact not found' });
     }
 
-    // STANDARD: 200 OK + message
     res.json({ message: 'Contact deleted successfully' });
   } catch (err) {
     res.status(500).json({ error: 'Failed to delete contact' });
