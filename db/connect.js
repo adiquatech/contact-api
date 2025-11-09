@@ -10,15 +10,15 @@ const initDb = (callback) => {
     tls: true,
     tlsAllowInvalidCertificates: true,
     connectTimeoutMS: 5000,
-    serverSelectionTimeoutMS: 5000
+    serverSelectionTimeoutMS: 5000,
   };
 
   MongoClient.connect(process.env.MONGODB_URI, options)
-    .then(client => {
+    .then((client) => {
       _db = client.db('contactsdb');
       callback(null, _db);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log('MongoDB skipped (fast):', err.message);
       callback(err);
     });

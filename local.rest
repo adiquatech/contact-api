@@ -10,3 +10,33 @@ GET https://contact-api-2il0.onrender.com/api/contact
 
 ### GET ONE CONTACT (Wasiu)
 GET https://contact-api-2il0.onrender.com/api/contact/690746b15c34d91c212dd777
+
+
+### POST - Create Contact
+POST https://contact-api-2il0.onrender.com/api/contact
+Content-Type: application/json
+
+{
+  "firstName": "Aisha",
+  "lastName": "Adisa",
+  "email": "aisha@example.com",
+  "favoriteColor": "purple",
+  "birthday": "2000-01-01"
+}
+
+### PUT - Update Contact
+PUT https://contact-api-2il0.onrender.com/api/contact/{{insert_id_here}}
+Content-Type: application/json
+
+{
+  "firstName": "Aisha",
+  "lastName": "Updated",
+  "email": "aisha.updated@example.com",
+  "favoriteColor": "pink",
+  "birthday": "2000-01-01"
+}
+
+### DELETE - Delete Contact
+DELETE https://contact-api-2il0.onrender.com/api/contact/{{insert_id_here}}
+
+
