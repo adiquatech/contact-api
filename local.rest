@@ -1,19 +1,13 @@
+# ALL LOCAL TESTING
+
 ### GET ALL CONTACTS
-GET http://localhost:3000/api/contact
+GET http://localhost:3000/contact
 
 ### GET ONE CONTACT (Wasiu)
-GET http://localhost:3000/api/contact/690746b15c34d91c212dd777
-
-
-### GET ALL CONTACTS (Render)
-GET https://contact-api-2il0.onrender.com/api/contact
-
-### GET ONE CONTACT (Wasiu)
-GET https://contact-api-2il0.onrender.com/api/contact/690746b15c34d91c212dd777
-
+GET http://localhost:3000/contact/690746b15c34d91c212dd777
 
 ### POST - Create Contact
-POST https://contact-api-2il0.onrender.com/api/contact
+POST http://localhost:3000/contact
 Content-Type: application/json
 
 {
@@ -23,9 +17,8 @@ Content-Type: application/json
   "favoriteColor": "purple",
   "birthday": "2000-01-01"
 }
-
 ### PUT - Update Contact
-PUT https://contact-api-2il0.onrender.com/api/contact/
+PUT http://localhost:3000/contact/6910820ea553df46afb56847
 Content-Type: application/json
 
 {
@@ -35,8 +28,45 @@ Content-Type: application/json
   "favoriteColor": "pink",
   "birthday": "2000-01-01"
 }
-
 ### DELETE - Delete Contact
-DELETE https://contact-api-2il0.onrender.com/api/contact/
+DELETE http://localhost:3000/contact/6910820ea553df46afb56847
+
+
+
+
+
+
+# ALL RENDER TESTING
+
+### GET ALL CONTACTS (Render)
+GET https://contact-api-2il0.onrender.com/contact
+
+### GET ONE CONTACT (Wasiu)
+GET https://contact-api-2il0.onrender.com/contact/690746b15c34d91c212dd777
+
+### POST - Create Contact
+POST https://contact-api-2il0.onrender.com/contact
+Content-Type: application/json
+
+{
+  "firstName": "Aisha",
+  "lastName": "Adisa",
+  "email": "aisha@example.com",
+  "favoriteColor": "purple",
+  "birthday": "2000-01-01"
+}
+### PUT - Update Contact
+PUT https://contact-api-2il0.onrender.com/contact/
+Content-Type: application/json
+
+{
+  "firstName": "Aisha",
+  "lastName": "Updated",
+  "email": "aisha.updated@example.com",
+  "favoriteColor": "pink",
+  "birthday": "2000-01-01"
+}
+### DELETE - Delete Contact
+DELETE https://contact-api-2il0.onrender.com/contact/
 
 
