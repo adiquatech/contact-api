@@ -18,8 +18,8 @@ app.get('/', (req, res) => {
 
 // API Routes
 app.use('/api/contact', contactsRouter);
-app.use('/temples', templeRouter);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('api/temples', templeRouter);
+app.use('api/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Start server after DB init
 initDb((err) => {
