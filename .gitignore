@@ -2,4 +2,3 @@ node_modules
 .env
 .txt
 structure.txt
-swagger_output.json
