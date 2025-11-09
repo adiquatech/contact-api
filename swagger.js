@@ -8,7 +8,6 @@ const doc = {
   // host: 'localhost:3000',
   host: 'contact-api-2il0.onrender.com',
   schemes: ['https'],
-  basePath: '/',
 };
 
 const outputFile = './swagger_output.json';
