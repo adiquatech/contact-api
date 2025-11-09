@@ -8,7 +8,7 @@ const { ObjectId } = require('mongodb');
 router.get('/', async (req, res) => {
   try {
     const db = getDb();
-    const contacts = await db.collection('contactsdb').find({}).toArray();
+    const contacts = await db.collection('contact').find({}).toArray();
     res.json(contacts);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch contacts' });
@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const db = getDb();
-    const contact = await db.collection('contactsdb').findOne({
+    const contact = await db.collection('contact').findOne({
       _id: new ObjectId(req.params.id),
     });
 
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
   try {
     const db = getDb();
     const newContact = { firstName, lastName, email, favoriteColor, birthday };
-    const result = await db.collection('contactsdb').insertOne(newContact);
+    const result = await db.collection('contact').insertOne(newContact);
     res.status(201).json({ _id: result.insertedId, ...newContact });
   } catch (err) {
     res.status(500).json({ error: 'Failed to create contact' });
@@ -62,7 +62,7 @@ router.put('/:id', async (req, res) => {
     const db = getDb();
 
     const result = await db
-      .collection('contactsdb')
+      .collection('contact')
       .updateOne(
         { _id: new ObjectId(req.params.id) },
         { $set: { firstName, lastName, email, favoriteColor, birthday } }
@@ -83,7 +83,7 @@ router.delete('/:id', async (req, res) => {
   try {
     const db = getDb();
 
-    const result = await db.collection('contactsdb').deleteOne({
+    const result = await db.collection('contact').deleteOne({
       _id: new ObjectId(req.params.id),
     });
 
