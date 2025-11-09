@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "contact-api-2il0.onrender.com",
-  "basePath": "/api",
+  "basePath": "/",
   "schemes": [
     "https"
   ],
