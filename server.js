@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 // API Routes
-app.use('/contact', contactsRouter);
+app.use('/contacts', contactsRouter);
 app.use('/temples', templeRouter);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
